@@ -6,23 +6,15 @@
 % the current file can be a simple sequence of \input. Otherwise It
 % can start with a \section or \chapter for instance.
 
-\documentclass[xelatex,a4paper,ja=standard]{bxjsarticle}
-\usepackage{amsmath, amssymb, amsthm}
-
-\title{Euclid--Euler Theorem}
-\author{森下　善}
-\date{2025年6月12日}
-
-\begin{document}
-\maketitle
-
-\section{定義(約数関数)}
+\begin{definition}[約数関数]
 
 自然数 \( n \) について、\( n \) の正の約数の総和を表す関数を約数関数といい、\( \sigma(n) \) と表す。
 
 {\( \sigma(n)\) は以下の性質をもつ。}
 
-\subsection{性質}
+\end{definition}
+
+\section*{性質}
 
 (1) \( n = 1 \) のときに限り、\( \sigma(n) = 1 \).
 
@@ -32,21 +24,27 @@
 
 (4) 乗法的関数である。すなわち、互いに素な自然数 \( m, n \) に対して、\( \sigma(mn) = \sigma(m) \cdot \sigma(n) \).
 
-\section{定義(完全数)}
+\begin{definition}[完全数]
+
 自然数 \( N \) が完全数であるとは、\( N \) の正の約数の総和が \( 2N \) に等しいことをいう。
 
 すなわち、\( \sigma(N)\) = \( 2N \).
 
-\section{定理(Euclid--Euler)}
+\end{definition}
+
+\begin{theorem}[Euclid-Euler]
+\lean{Theorems100.Nat.eq_two_pow_mul_prime_mersenne_of_even_perfect}
 
 \( n \) を自然数とする。
 メルセンヌ数 \( 2^n - 1 \) が素数であるとき、\( 2^{n-1}(2^n - 1) \) は完全数である。
 
 逆に、任意の偶数の完全数は \( 2^{n-1}(2^n - 1) \) の形で表され、このとき \( 2^n - 1 \) は(メルセンヌ)素数である。
 
-\section{証明}
+\end{theorem}
 
-\subsection{十分性(Euclid)}
+\begin{proof}
+
+[十分性(Euclid)]
 
 \( N = 2^{n-1}(2^n - 1) \) とする。(\(n \) は自然数)
 
@@ -65,7 +63,11 @@
 
 したがって、\(\sigma(N) = 2 \cdot 2^{n-1}(2^n - 1) = 2N\) が成り立つため、\( N \) は完全数である。
 
-\subsection{必要性(Euler)}
+\end{proof}
+
+\begin{proof}
+
+[必要性(Euler)]
 
 任意の偶数の完全数 \( N \) は自然数 \( n \) と奇数 \( k \) を用いて、\( N = 2^{n-1}k \) と表せる。
 
@@ -97,6 +99,4 @@
 
 またこのとき、\(\sigma(k) = 1 + k \) となり、\( k = 2^n - 1 \) は素数である。
 
-\qed
-
-\end{document}
+\end{proof}
